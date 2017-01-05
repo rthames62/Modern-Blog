@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* VARIABLES */
+
+$background-color: #F6F6F6;
+
+$primary-color: #333544;
+$primary-color-bright: #5b6193;
+$primary-color-dark: #1E202B;
+
+$secondary-color: #EE4542;
+$secondary-color-bright: #E15765;
+$secondary-color-dark: #bd2d2a;
+
+$accent-color: #6AAAB7;
+
+$font-color: #898989;
+$link-color: #6AAAB7;
+
+$gray: #9598A3;
+$light-gray: #f5f5f5;
+$border: rgba(255,255,255,0.15);
+$white: #fff;
+$dark-gray: #333333;
+$darker-gray: #1b1d1f;
+
+$font-stack: 'Open Sans', sans-serif;
+
+/* STYLES */
+
+navigation {
+  display: block;
+}
+
+body {
+  background-color: $light-gray;
+}
+
+ul, li {
+  margin: 0;
+}
+
+section.hero {
+  background: url("../images/hero-bg-dark.jpg");
+  background-size: cover;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $white;
+  padding-top: 40px;
+
+  div.hero-content {
+    margin: 0 auto;
+  }
+}
+
+section.posts {
+  width: 100vw;
+  margin-top: 50px;
+
+  div.content-wrapper {
+    background-color: $white;
+    min-height: 400px;
+
+    div.categories {
+      min-height: 50px;
+      background-color: $primary-color;
+      color: $white;
+      display: flex;
+      align-items: center;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 25px;
+        list-style: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+div.posts {
+
+  div.featured-image {
+    height: 125px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+}
