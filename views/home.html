@@ -5,20 +5,54 @@
   </div>
 </section>
 
+<section class="categories">
+  <div class="categories">
+    <ul>
+      <li ng-repeat="category in categories" ng-click="filterCategory(category)">{{category}}</li>
+    </ul>
+    <span ng-click="showAllPosts()">Show All</span>
+  </div>
+</section>
+
 <section class="posts">
-  <div class="container content-wrapper">
-    <div class="twelve columns categories">
+  <div class="content-wrapper">
+    <div class="filter">
+      <h4>Filter By:</h4>
       <ul>
-        <li ng-repeat="category in categories">{{category}}</li>
+        <li ng-click="sortByViews()" ng-class="mostViews">Most Viewed</li>
+        <li ng-click="sortByComments()" ng-class="mostComments">Most Comments</li>
+        <li ng-click="sortByShares()" ng-class="mostShares">Most Shared</li>
       </ul>
     </div>
-
-    <div class="twelve columns posts">
-      <div class="four columns" ng-repeat="post in posts">
+    <div class="posts">
+      <div class="post" ng-repeat="post in posts" ui-sref="blog({id : {{post.id}}})">
         <div class="featured-image">
           <img ng-src="{{post.featured_image}}" />
         </div>
+        <div class="post-content">
+          <h3>{{post.title}}</h3>
+          <p class="categories"><span ng-repeat="category in post.categories">{{category}}</span></p>
+          <p class="date">{{post.date}}</p>
+          <p class="stats">Views: {{post.views}}</p>
+          <p class="stats">Comments: {{post.comments}}</p>
+          <p class="stats">Shares: {{post.shares}}</p>
+          <p class="summary">{{post.content_summary}}</p>
+        </div>
+        <div class="post-info">
+          <p class="author">
+            Author: {{post.author}}
+          </p>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <div class="wrapper">
+    <h2>Thank you for visiting our website!</h2>
+    <h4>To stay up to date with our company, sign up for our e-mail newsletter!</h4>
+    <input class="email" type="text" value="" placeholder="Please enter your e-mail address">
+    <input class="submit" type="button" name="name" value="Sign Up">
   </div>
 </section>

@@ -7,4 +7,9 @@ const lifeblueBlog = angular.module('lifeblueBlog', ['ui.router'])
         templateUrl : './views/home.html',
         url : '/'
       })
+      .state('blog', {
+        templateUrl : './views/single.html',
+        url : '/blog/:id',
+        controller : 'postCtrl'
+      })
   })

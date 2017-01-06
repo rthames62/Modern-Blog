@@ -1,5 +1,6 @@
 nav.navigation {
   width: 100vw;
+  height: 55px;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -7,8 +8,12 @@ nav.navigation {
   position: fixed;
   align-items: center;
   border-bottom: 1px solid $border;
+  z-index: 10;
+  transition: .2s ease all;
 
   a.logo {
+    color: $white;
+
     img {
       width: 120px;
     }
@@ -78,6 +83,17 @@ nav.navigation {
     a:hover {
       text-decoration: none;
       background-color: $dark-gray;
+    }
+  }
+}
+
+nav.navigation.active {
+  background-color: $primary-color;
+  height: 45px;
+
+  ul.menu {
+    li:hover ul.sub-menu, li ul.sub-menu:hover {
+      top: 50px;
     }
   }
 }
